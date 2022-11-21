@@ -5,39 +5,39 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.3
 # Define the jobs we want to run for this project
 jobs:
-#  create_infrastructure: 
-#      docker:
-#        - image: amazon/aws-cli
-#      steps:
-#        - checkout
-#        - run:
-#            name: Create Cloudformation Stack
-#            command: |
-#              aws cloudformation deploy \
-#                --template-file template.yml \
-#                --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
-#                --region us-east-1
+  create_infrastructure: 
+      docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+        - run:
+            name: Create Cloudformation Stack
+            command: |
+              aws cloudformation deploy \
+                --template-file template.yml \
+                --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
+                --region us-east-1
   
   configure_infrastructure: 
-  docker:
-    - image: python:3.7-alpine3.11
-  steps:
-    - checkout
-    - add_ssh_keys:
-        fingerprints: ["be:b0:27:ec:37:c1:32:b7:57:4f:29:92:f8:b8:3a:49"]
-    - run:
-        name: Install dependencies
-        command: |
-          # install the dependencies needed for your playbook
-          apk add --update ansible 
-    - run:
-        name: Configure server
-        command: |
-          sudo ansible-playbook -i inventory.txt main.yml
+      docker:
+        - image: python:3.7-alpine3.11
+      steps:
+        - checkout
+        - add_ssh_keys:
+            fingerprints: ["91:3c:35:a7:53:85:fb:6c:4a:e5:f2:a9:d6:af:86:12"]
+        - run:
+            name: Install dependencies
+            command: |
+              # install the dependencies needed for your playbook
+              apk add --update ansible 
+        - run:
+            name: Configure server
+            command: |
+              ansible-playbook -i inventory.txt main.yml
 # Sequential workflow
 workflows:
   # Name the workflow
-  infrastructure_config:
+  infrastructure:
     jobs:
 #     - create_infrastructure
       - configure_infrastructure
