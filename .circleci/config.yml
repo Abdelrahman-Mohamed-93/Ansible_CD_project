@@ -30,11 +30,11 @@ jobs:
             command: |
               # install the dependencies needed for your playbook
               apk add --update ansible
-              ansible all -i inventory -m ping
+#              ansible all -i inventory -m ping
         - run:
             name: Configure server
             command: |
-              ansible-playbook main-connect.yml -i ../inventory
+              ansible-playbook main-connect.yml -i inventory
 # Sequential workflow
 workflows:
   # Name the workflow
