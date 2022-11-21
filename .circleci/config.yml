@@ -30,11 +30,11 @@ jobs:
             command: |
               # install the dependencies needed for your playbook
               apk add --update ansible 
-              apk add sudo
+#              apk add sudo
         - run:
             name: Configure server
             command: |
-              ansible-playbook main.yml -i inventory --private-key udacity.pem
+              ansible-playbook main-connect.yml -i inventory --private-key udacity.pem
 # Sequential workflow
 workflows:
   # Name the workflow
