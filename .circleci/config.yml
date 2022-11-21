@@ -24,15 +24,16 @@ jobs:
       steps:
         - checkout
         - add_ssh_keys:
-            fingerprints: ["be:b0:27:ec:37:c1:32:b7:57:4f:29:92:f8:b8:3a:49"]
+            fingerprints: ["0c:55:f7:d7:ad:e3:73:19:0b:e6:c6:46:5c:04:76:94"] # You can get this ID in the section where you registered the SSH Key
         - run:
             name: Install dependencies
             command: |
               # install the dependencies needed for your playbook
-              apk add ansible
+              apk add ansible 
+        - run:
             name: Configure server
             command: |
-              ansible-playbook main.yml -i inventory.txt
+              ansible-playbook -i inventory.txt main4.yml
 # Sequential workflow
 workflows:
   # Name the workflow
