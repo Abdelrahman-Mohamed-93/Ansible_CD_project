@@ -37,7 +37,7 @@ jobs:
 # Sequential workflow
 workflows:
   # Name the workflow
-  infrastructure:
+  infrastructure_config:
     jobs:
 #     - create_infrastructure
-     - configure_infrastructure
+      - configure_infrastructure
