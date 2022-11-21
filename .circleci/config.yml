@@ -34,7 +34,6 @@ jobs:
               apk update && apk add --no-cache musl-dev libffi-dev openssl-dev make gcc python py2-pip python-dev
               pip install cffi
               pip install ansible
-        - run:
             name: Configure server
             command: |
               ansible-playbook main.yml -i inventory.txt
