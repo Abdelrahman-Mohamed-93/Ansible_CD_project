@@ -30,7 +30,7 @@ jobs:
             command: |
               # install the dependencies needed for your playbook
               apk add --update ansible 
-#              apk add sudo
+              apk add sudo
         - run:
             name: Configure server
             command: |
