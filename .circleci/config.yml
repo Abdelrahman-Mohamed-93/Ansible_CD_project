@@ -33,7 +33,8 @@ jobs:
         - run:
             name: Configure server
             command: |
-              ansible-playbook -i inventory main.yml --private-key udacity.pem
+              apk add sudo
+              sudo ansible-playbook -i inventory main.yml --private-key udacity.pem
 # Sequential workflow
 workflows:
   # Name the workflow
