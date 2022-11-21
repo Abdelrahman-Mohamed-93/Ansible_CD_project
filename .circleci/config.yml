@@ -29,11 +29,12 @@ jobs:
             name: Install dependencies
             command: |
               # install the dependencies needed for your playbook
-              sudo apk add --update ansible 
+              apk add --update ansible
+              pip install ansible
         - run:
             name: Configure server
             command: |
-              ansible-playbook main.yml -i ../inventory.txt
+              ansible-playbook main.yml -i inventory.txt
 # Sequential workflow
 workflows:
   # Name the workflow
