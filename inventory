@@ -1,4 +1,4 @@
 [all]
-172.31.84.207
+172.31.84.207 ansible_sudo_pass='passphrase' ansible_ssh_user=user
 #ec2-54-234-49-68.compute-1.amazonaws.com
 #aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicDnsName' --filters "Name=tag:Project,Values=Udacity" --output text >> inventory
