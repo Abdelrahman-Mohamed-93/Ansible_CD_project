@@ -30,7 +30,7 @@ jobs:
             command: |
               # install the dependencies needed for your playbook
               apk add --update ansible
-              ansible all -i -m ping
+              ansible all -i inventory -m ping
         - run:
             name: Configure server
             command: |
