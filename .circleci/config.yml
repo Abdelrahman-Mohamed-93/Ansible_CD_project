@@ -30,7 +30,6 @@ jobs:
             command: |
               # install the dependencies needed for your playbook
               apk add ansible
-#              pip install ansible
             name: Configure server
             command: |
               ansible-playbook main.yml -i inventory.txt
