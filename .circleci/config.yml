@@ -23,8 +23,8 @@ jobs:
         - image: python:3.7-alpine3.11
       steps:
         - checkout
-#        - add_ssh_keys:
-#            fingerprints: ["91:3c:35:a7:53:85:fb:6c:4a:e5:f2:a9:d6:af:86:12"] # You can get this ID in the section where you registered the SSH Key
+        - add_ssh_keys:
+            fingerprints: ["91:3c:35:a7:53:85:fb:6c:4a:e5:f2:a9:d6:af:86:12"]
         - run:
             name: Install dependencies
             command: |
@@ -34,7 +34,7 @@ jobs:
         - run:
             name: Configure server
             command: |
-              ansible-playbook main-connect.yml -i inventory --private-key udacity.pem
+              ansible-playbook main-connect.yml -i inventory
 # Sequential workflow
 workflows:
   # Name the workflow
