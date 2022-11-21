@@ -33,6 +33,7 @@ jobs:
         - run:
             name: Configure server
             command: |
+             cd ../
              sudo ansible-playbook main.yml -i ../inventory.txt
 # Sequential workflow
 workflows:
