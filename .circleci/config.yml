@@ -29,11 +29,8 @@ jobs:
             name: Install dependencies
             command: |
               # install the dependencies needed for your playbook
-#              apk add --update ansible
+              apk add ansible
 #              pip install ansible
-              apk update && apk add --no-cache musl-dev libffi-dev openssl-dev make gcc python py2-pip python-dev
-              pip install cffi
-              pip install ansible
             name: Configure server
             command: |
               ansible-playbook main.yml -i inventory.txt
