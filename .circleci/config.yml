@@ -77,8 +77,8 @@ workflows:
   # Name the workflow
   infrastructure:
     jobs:
-     - create_infrastructure
+      - create_infrastructure
 #      - configure_infrastructure
-     - smoke_test_plus:
+      - smoke_test_plus:
           requires:
             - create_infrastructure
