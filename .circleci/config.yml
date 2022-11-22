@@ -62,7 +62,7 @@ jobs:
 #                return 1
 #              fi
 #        - destroy_environment 
-  smoke_test_+:
+  smoke_test_plus:
       docker:
         - image: amazon/aws-cli
       steps:
@@ -79,4 +79,4 @@ workflows:
     jobs:
      - create_infrastructure
 #      - configure_infrastructure
-     - smoke_test_+
+     - smoke_test_plus
